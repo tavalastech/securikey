@@ -1,3 +1,3 @@
 # Todo
 
-- [ ] Update README To Better Explain The Project
+- [ ] Update README to better explain the project
