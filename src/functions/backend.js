@@ -1,6 +1,7 @@
-function logPassword(passwordToCheck) {
+export function logPassword(passwordToCheck) {
   console.log(passwordToCheck);
 }
 
-
-export default logPassword;
+export function logPasswordUpper(passwordToCheck) {
+  console.log(passwordToCheck.toUpperCase())
+}
