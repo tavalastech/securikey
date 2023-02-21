@@ -1,5 +1,6 @@
-import logo from "./logo.svg";
+import React, { useState } from "react";
 import "@aws-amplify/ui-react/styles.css";
+import test from "./functions/backend";
 import {
   withAuthenticator,
   Button,
@@ -8,16 +9,16 @@ import {
   View,
   Card,
 } from "@aws-amplify/ui-react";
+import EnterPassword from "./components/EnterPassword";
+
+
 
 function App({ signOut }) {
   return (
-    <View className="App">
-      <Card>
-        <Image src={logo} className="App-logo" alt="logo" />
-        <Heading level={1}>We now have Auth!</Heading>
-      </Card>
-      <Button onClick={signOut}>Sign Out</Button>
-    </View>
+      <View className="App">
+        <EnterPassword></EnterPassword>
+        <Button onClick={signOut}>Sign Out</Button>
+      </View>
   );
 }
 
