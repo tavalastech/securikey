@@ -10,16 +10,39 @@ import {
   Card,
 } from "@aws-amplify/ui-react";
 import EnterPassword from "./components/EnterPassword";
+import './App.css'
+import Footer from './Footer'
 
 
 
+//change the tab heading
+var title = document.querySelector('title');
+title.innerText = 'SecuriKey';
+
+//the signout function
 function App({ signOut }) {
   return (
       <View className="App">
         <EnterPassword></EnterPassword>
-        <Button onClick={signOut}>Sign Out</Button>
+        <Button class = "Button" onClick={signOut}>Sign Out</Button>
       </View>
+      
   );
 }
 
-export default withAuthenticator(App);
+//trying to get a stupid footer to work
+function App2() {
+  return(
+    <Footer />
+  )
+}
+
+//logo on screen
+const img = document.createElement("img");
+img.src = "android-chrome-192x192.png";
+document.body.appendChild(img);
+
+
+
+export default withAuthenticator(App, App2); 
+
