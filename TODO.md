@@ -1,3 +1,4 @@
 # Todo
-
-- [ ] Update README to better explain the project
+- [ ] GUI
+- [ ] Complete System Analysis Report
+- [ ] Update README To Better Explain The Project
