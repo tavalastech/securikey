@@ -36,3 +36,54 @@
     transform: rotate(360deg);
   }
 }
+
+/* payton edits */
+html {
+  background-color:#E9E9E9;
+}
+
+.App{
+  /*position: absolute; left: 37vw; top: 80px;*/
+  margin-left: 100px;
+  position: relative; top: 250px;
+
+}
+
+/* fun button, but unprofessional?
+.Button{
+  background-color:darkkhaki;
+  color: black;
+} */
+
+.password{
+  color:black;
+  margin: 15px;
+}
+
+img{
+  position: relative;
+  margin-left: 190px;
+}
+
+header {
+  position: relative;
+  text-align: center;
+  padding-top: 25px;
+}
+
+.footer {
+  background-color: green;
+  border-top:2px solid red;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  color: white;
+  font-size: 25px;
+ }
+
+ .AppF{
+  color: #228b22;
+  text-align: center;
+ }
+
+ 
