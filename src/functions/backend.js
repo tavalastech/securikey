@@ -14,7 +14,7 @@
 //   console.log("Overall:", fullregex.test(passwordToCheck));
 // }
 
-const fullregex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=!]).{8,}$/;
+const fullregex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])^(?=.*["'()*,-./:;<>?_`~@#$%^&+=!\][}{|\\ ]).{8,}$/;
 const numbers = /^(?=.*\d)/;
 const lowercase = /^(?=.*[a-z])/;
 const uppercase = /^(?=.*[A-Z])/;
