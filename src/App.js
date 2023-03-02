@@ -23,8 +23,10 @@ title.innerText = 'SecuriKey';
 function App({ signOut }) {
   return (
       <View className="App">
+        <h1 class="title">SecuriKey</h1>
+        <p>Enter your password to be checked against general strength parameters.</p>
         <EnterPassword></EnterPassword>
-        <Button class = "Button" onClick={signOut}>Sign Out</Button>
+        <Button class = "signOutButton" onClick={signOut}>Sign Out</Button>
       </View>
       
   );

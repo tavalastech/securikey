@@ -37,7 +37,7 @@ export default function EnterPassword() {
   return (
     <>
       <input ref={passwordRef} type="text" />
-      <button onClick={onSubmit}>Submit</button>
+      <button class ="submitButton" onClick={onSubmit}>Submit</button>
 
       {/* 👇️ show elements on click */}
       {isShown && (

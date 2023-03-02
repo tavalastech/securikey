@@ -42,6 +42,11 @@ html {
   background-color:#E9E9E9;
 }
 
+/*removes extra whitespace at top of page*/
+*{
+  margin: 0;
+}
+
 .App{
   /*position: absolute; left: 37vw; top: 80px;*/
   margin-left: 100px;
@@ -49,41 +54,39 @@ html {
 
 }
 
-/* fun button, but unprofessional?
-.Button{
-  background-color:darkkhaki;
-  color: black;
-} */
-
-.password{
+.submitButton{
   color:black;
-  margin: 15px;
+  margin: 5px;
 }
 
 img{
-  position: relative;
-  margin-left: 190px;
+  position: absolute;
+  top: 100px;
+  left: 220px;
+  filter: drop-shadow(2px 2px #80723c);
 }
 
-header {
-  position: relative;
+.title{
+  font-size:120px;
+  position: absolute;
+  left: 310px;
   text-align: center;
-  padding-top: 25px;
+  top: -150px;
+  color:#af943b;
+  text-shadow: 2px 2px 2px #80723c;
+  font-family: "Verdana", sans-serif;
 }
 
-.footer {
-  background-color: green;
-  border-top:2px solid red;
-  position: fixed;
-  width: 100%;
-  bottom: 0;
-  color: white;
-  font-size: 25px;
- }
+h1, h2{
+  font-family: "Verdana", sans-serif;
+}
 
- .AppF{
-  color: #228b22;
-  text-align: center;
- }
+.signOutButton {
+  margin: 20px;
+}
 
- 
+p{
+  right: -40px;
+  top: -2px;
+  position: relative;
+}
