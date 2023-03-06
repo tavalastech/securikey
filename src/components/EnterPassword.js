@@ -5,7 +5,6 @@ export default function EnterPassword() {
 
   // React Hooks
   const passwordRef = useRef();
-  //const [ printPassword, setPrintPassword ] = useState("");
   const [isShown, setIsShown] = useState(false);
   const [number, setNumber] = useState("");
   const [lowercase, setLowercase] = useState(""); 
@@ -20,18 +19,14 @@ export default function EnterPassword() {
   function onSubmit(e) {
     const password = passwordRef.current.value;
     if (password === "") return;
-    //logPassword(password);
     setNumber(testNumbers(password) + "");
     setLowercase(testLowercase(password) + ""); 
     setUppercase(testUppercase(password) + "");
     setSpecial(testSpecial(password) + ""); 
     setLength(testLength(password) + ""); 
     setOverall(testOverall(password) + ""); 
-    //setPrintPassword(password);
-    //var t1 = testPassword(password);
-    //console.log (t1);
     setIsShown((current) => !current);
-    //settrying(t1 + "");
+  
   }
 
   return (
@@ -42,8 +37,7 @@ export default function EnterPassword() {
       {/* 👇️ show elements on click */}
       {isShown && (
         <div>
-          {/* <h1>This is the input: {printPassword}</h1>
-          <p>This is the output: {trying}</p> */}
+          
           <h1>Password Strength Test Results</h1>
           <section>
             <div>Does it contain a number: {number}</div>
