@@ -46,7 +46,7 @@ export default function EnterPassword() {
             <div>Does it contain a special character: {special}</div>
             <div>Is it atleast 8 characters long: {length}</div>
           </section>
-          <h2>Does This Password Past The Test: {overall}</h2>
+          <h2>Does This Password Pass The Test: {overall}</h2>
 
           
         </div>

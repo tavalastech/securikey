@@ -11,9 +11,6 @@ import {
 } from "@aws-amplify/ui-react";
 import EnterPassword from "./components/EnterPassword";
 import './App.css'
-import Footer from './Footer'
-
-
 
 //change the tab heading
 var title = document.querySelector('title');
@@ -32,19 +29,10 @@ function App({ signOut }) {
   );
 }
 
-//trying to get a stupid footer to work
-function App2() {
-  return(
-    <Footer />
-  )
-}
-
 //logo on screen
 const img = document.createElement("img");
 img.src = "android-chrome-192x192.png";
 document.body.appendChild(img);
-
-
 
 export default withAuthenticator(App, App2); 
 
