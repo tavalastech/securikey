@@ -33,3 +33,5 @@ export function testLength (passwordToCheck) {
 export function testOverall (passwordToCheck) { 
   return (fullregex.test(passwordToCheck))
 }
+
+//To Fix Tk's Fuckup 
