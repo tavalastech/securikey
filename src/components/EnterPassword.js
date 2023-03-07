@@ -80,6 +80,7 @@ export default function EnterPassword() {
     setLength(testLength(password) + "");
     setOverall(testOverall(password) + "");
     setIsShown((current) => !current);
+  
   }
 
   // Returns HTML component
@@ -94,8 +95,7 @@ export default function EnterPassword() {
       {/* 👇️ show elements on click */}
       {isShown && (
         <div>
-          {/* <h1>This is the input: {printPassword}</h1>
-          <p>This is the output: {trying}</p> */}
+          
           <h1>Password Strength Test Results</h1>
           <section>
             <div>Does it contain a number: {number}</div>
@@ -105,6 +105,9 @@ export default function EnterPassword() {
             <div>Is it atleast 8 characters long: {length}</div>
           </section>
           <h2>Does This Password Pass The Test? {overall.toUpperCase()}</h2>
+          <h2>Does This Password Pass The Test: {overall}</h2>
+
+          
         </div>
       )}
     </>
