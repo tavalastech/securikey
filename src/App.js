@@ -36,5 +36,5 @@ const img = document.createElement("img");
 img.src = "android-chrome-192x192.png";
 document.body.appendChild(img);
 
-export default withAuthenticator(App, App2); 
+export default withAuthenticator(App); 
 
