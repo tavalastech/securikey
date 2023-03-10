@@ -24,6 +24,7 @@ import {
 // This is where we write the EnterPassword component
 
 export default function EnterPassword() {
+  
   // useRef is a React Hook that allows the user to reference the input function
   const passwordRef = useRef();
 
@@ -80,7 +81,6 @@ export default function EnterPassword() {
     setLength(testLength(password) + "");
     setOverall(testOverall(password) + "");
     setIsShown((current) => !current);
-  
   }
 
   // Returns HTML component
@@ -105,8 +105,6 @@ export default function EnterPassword() {
             <div>Is it atleast 8 characters long: {length}</div>
           </section>
           <h2>Does This Password Pass The Test: {overall}</h2>
-
-          
         </div>
       )}
     </>
