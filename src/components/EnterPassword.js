@@ -21,10 +21,10 @@ import {
 
 
 
-// This is where we write the EnterPassword component
+// This is where we write the EnterPassword component function
 
 export default function EnterPassword() {
-  
+
   // useRef is a React Hook that allows the user to reference the input function
   const passwordRef = useRef();
 
@@ -70,7 +70,7 @@ export default function EnterPassword() {
 
   */
 
-  // Functions To Password and Assigns To State Variable
+  // Function gras password, test against password, and assigns result to state Variable
   function onSubmit(e) {
     const password = passwordRef.current.value;
     if (password === "") return;
@@ -83,7 +83,7 @@ export default function EnterPassword() {
     setIsShown((current) => !current);
   }
 
-  // Returns HTML component
+  // Returned JSX component
 
   return (
     <>
