@@ -1,15 +1,15 @@
-/** 
- *  EnterPassword.js 
+/**
+ *  EnterPassword.js
  *  Richard Charity
- * 
+ *
  *  Enter Password is a React Component
- * 
- *  It's the part of the screen that allows the user to input, 
- *  submit and show the password test results to the screen. 
- * 
+ *
+ *  It's the part of the screen that allows the user to input,
+ *  submit and show the password test results to the screen.
+ *
  */
 
-import React, { useState, useRef } from "react";  // Import React + React Hooks
+import React, { useState, useRef } from "react"; // Import React + React Hooks
 import {
   testNumbers,
   testLowercase,
@@ -31,14 +31,13 @@ import {
   containsParentFirstNames,
   containsParentLastNames,
   containsPetName,
-  containsSignificantDates, 
+  containsSignificantDates,
   containsSportsTeams,
   containsSpouseFirstName,
   containsSpouseLastName,
-  strengthScore
+  strengthScore,
 } from "../functions/backend"; // Import Backend Functions
-
-
+import "../App.css";
 
 // This is where we write the EnterPassword component
 
@@ -61,9 +60,8 @@ export default function EnterPassword() {
   const petNameRef = useRef();
   const significantDatesRef = useRef();
   const sportsTeamsRef = useRef();
-  const spouseFirstNameRef = useRef(); 
+  const spouseFirstNameRef = useRef();
   const spouseLastNameRef = useRef();
-
 
   /* State Variables
       
@@ -116,7 +114,6 @@ export default function EnterPassword() {
   const [spouseFirstName, setSpouseFirstName] = useState("");
   const [spouseLastName, setSpouseLastName] = useState("");
 
-
   /*  On Submit Function 
   
       On press of the submit button, the function grabs the password input and executes 
@@ -156,7 +153,7 @@ export default function EnterPassword() {
     setLength(testLength(password) + "");
     setOverall(testOverall(password) + "");
     setAddress(containsAddress(password, address) + "");
-    setBirthday(containsBirthday(password, birthday ) + "");
+    setBirthday(containsBirthday(password, birthday) + "");
     setFavoriteNumber(containsFavoriteNumber(password, favoriteNumber) + "");
     setFirstName(containsFirstName(password, firstName) + "");
     setHoliday(containsHoliday(password, holiday) + "");
@@ -166,42 +163,46 @@ export default function EnterPassword() {
     setKidsLastNames(containsKidsLastNames(password, kidsLastName) + "");
     setLastName(containsLastName(password, lastName) + "");
     setMiddleName(containsMiddleName(password, middleName) + "");
-    setParentFirstNames(containsParentFirstNames(password, parentFirstNames) + "");
+    setParentFirstNames(
+      containsParentFirstNames(password, parentFirstNames) + ""
+    );
     setParentLastNames(containsParentLastNames(password, parentLastNames) + "");
     setPetName(containsPetName(password, petName) + "");
-    setSignificantDates(containsSignificantDates(password, significantDates) + "");
+    setSignificantDates(
+      containsSignificantDates(password, significantDates) + ""
+    );
     setSportsTeams(containsSportsTeams(password, sportsTeams) + "");
     setSpouseFirstName(containsSpouseFirstName(password, spouseFirstName) + "");
     setSpouseLastName(containsSpouseLastName(password, spouseLastName) + "");
     setIsShown((current) => !current);
-  
   }
-
 
   // Returns HTML component
 
   return (
     <>
-      <input ref={addressRef} type="text" />
-      <input ref={firstNameRef} type="text" />
-      <input ref={lastNameRef} type="text" />
-      <input ref={middleNameRef} type="text" />
-      <input ref={birthdayRef} type="text" />
-      <input ref={favoriteNumberRef} type="text" />
-      <input ref={significantDatesRef} type="text" />
-      <input ref={holidayRef} type="text" />
-      <input ref={sportsTeamsRef} type="text" />
-      <input ref={hometownRef} type="text" />
-      <input ref={petNameRef} type="text" />
-      <input ref={spouseFirstNameRef} type="text" />
-      <input ref={spouseLastNameRef} type="text" />
-      <input ref={parentFirstNamesRef} type="text" />
-      <input ref={parentLastNamesRef} type="text" />
-      <input ref={kidsFirstNamesRef} type="text" />
-      <input ref={kidsLastNamesRef} type="text" />
-      <input ref={kidsBirthdaysRef} type="text" />
-      <input ref={passwordRef} type="text" />
-      
+      <div class="input-container">
+        <div class="input" >Address: <input ref={addressRef} type="text" /></div>
+        <div class="input" ><input  ref={firstNameRef} type="text" /></div>
+        <div class="input" ><input  ref={lastNameRef} type="text" /></div>
+        <div class="input" ><input  ref={middleNameRef} type="text" /></div>
+        <div class="input" ><input  ref={birthdayRef} type="text" /></div>
+        <div class="input" ><input  ref={favoriteNumberRef} type="text" /></div>
+        <div class="input" ><input  ref={significantDatesRef} type="text" /></div>
+        <div class="input" ><input  ref={holidayRef} type="text" /></div>
+        <div class="input" ><input  ref={sportsTeamsRef} type="text" /></div>
+        <div class="input" ><input  ref={hometownRef} type="text" /></div>
+        <div class="input" ><input  ref={petNameRef} type="text" /></div>
+        <div class="input" ><input  ref={spouseFirstNameRef} type="text" /></div>
+        <div class="input" ><input  ref={spouseLastNameRef} type="text" /></div>
+        <div class="input" ><input  ref={parentFirstNamesRef} type="text" /></div>
+        <div class="input" ><input  ref={parentLastNamesRef} type="text" /></div>
+        <div class="input" ><input  ref={kidsFirstNamesRef} type="text" /></div>
+        <div class="input" ><input  ref={kidsLastNamesRef} type="text" /></div>
+        <div class="input" ><input  ref={kidsBirthdaysRef} type="text" /></div>
+        <div class="input" ><input  ref={passwordRef} type="text" /></div>
+      </div>
+
       <button class="submitButton" onClick={onSubmit}>
         Submit
       </button>
@@ -209,7 +210,6 @@ export default function EnterPassword() {
       {/* 👇️ show elements on click */}
       {isShown && (
         <div>
-          
           <h1>Password Strength Test Results</h1>
           <section>
             <div>Does it contain a number: {number}</div>
@@ -230,17 +230,16 @@ export default function EnterPassword() {
             <div>Does it contain my pet's name: {petName}</div>
             <div>Does it contain my spouse's first name: {spouseFirstName}</div>
             <div>Does it contain my spouse's last name: {spouseLastName}</div>
-            <div>Does it contain my parents' first names: {parentFirstNames}</div>
+            <div>
+              Does it contain my parents' first names: {parentFirstNames}
+            </div>
             <div>Does it contain my parents' last names: {parentLastNames}</div>
             <div>Does it contain my kids' first names: {kidsFirstNames}</div>
             <div>Does it contain my kids' last names: {kidsLastNames}</div>
             <div>Does it contain my kids' birthdays: {kidsBirthdays}</div>
-            
-            
           </section>
           <h2>Does This Password Pass The Test? {overall.toUpperCase()}</h2>
           <h2>Does This Password Pass The Test: {overall}</h2>
-          
         </div>
       )}
     </>
