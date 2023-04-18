@@ -20,21 +20,28 @@ title.innerText = 'SecuriKey';
 function App({ signOut }) {
   return (
       <View className="App">
-        {/** Header */}
-        <h1 class="title">SecuriKey</h1>
-        {/** Instuctions */}
-        <p>Enter your password to be checked against general strength parameters.</p>
+        <div class="containMore">
+          <div class="contain">
+            {/** Logo on screen **/}
+            <img src="android-chrome-192x192.png" alt="Logo"></img>
+            {/** Header */}
+            <h1 class="title">SecuriKey</h1>
+          </div>
+
+          {/** Instructions */}
+          <p class="inst">SecuriKey is a web application that allows you to test your password against not only general strength requirements, but also publicly known information you might post online.
+           Information such as your pet's name, your favorite holiday, or your birthday.</p>
+        </div>
+
         <EnterPassword></EnterPassword>
         <Button class = "signOutButton" onClick={signOut}>Sign Out</Button>
       </View>
       
+
+
   );
 }
 
-//logo on screen
-const img = document.createElement("img");
-img.src = "android-chrome-192x192.png";
-document.body.appendChild(img);
 
 export default withAuthenticator(App); 
 

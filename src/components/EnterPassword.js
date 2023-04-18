@@ -145,6 +145,8 @@ export default function EnterPassword() {
     const spouseFirstName = spouseFirstNameRef.current.value;
     const spouseLastName = spouseLastNameRef.current.value;
 
+    
+
     if (password === "") return;
     setNumber(testNumbers(password) + "");
     setLowercase(testLowercase(password) + "");
@@ -175,37 +177,41 @@ export default function EnterPassword() {
     setSpouseFirstName(containsSpouseFirstName(password, spouseFirstName) + "");
     setSpouseLastName(containsSpouseLastName(password, spouseLastName) + "");
     setIsShown((current) => !current);
-  }
+}
 
   // Returns HTML component
 
   return (
     <>
       <div class="input-container">
-        <div class="input" >Address: <input ref={addressRef} type="text" /></div>
-        <div class="input" ><input  ref={firstNameRef} type="text" /></div>
-        <div class="input" ><input  ref={lastNameRef} type="text" /></div>
-        <div class="input" ><input  ref={middleNameRef} type="text" /></div>
-        <div class="input" ><input  ref={birthdayRef} type="text" /></div>
-        <div class="input" ><input  ref={favoriteNumberRef} type="text" /></div>
-        <div class="input" ><input  ref={significantDatesRef} type="text" /></div>
-        <div class="input" ><input  ref={holidayRef} type="text" /></div>
-        <div class="input" ><input  ref={sportsTeamsRef} type="text" /></div>
-        <div class="input" ><input  ref={hometownRef} type="text" /></div>
-        <div class="input" ><input  ref={petNameRef} type="text" /></div>
-        <div class="input" ><input  ref={spouseFirstNameRef} type="text" /></div>
-        <div class="input" ><input  ref={spouseLastNameRef} type="text" /></div>
-        <div class="input" ><input  ref={parentFirstNamesRef} type="text" /></div>
-        <div class="input" ><input  ref={parentLastNamesRef} type="text" /></div>
-        <div class="input" ><input  ref={kidsFirstNamesRef} type="text" /></div>
-        <div class="input" ><input  ref={kidsLastNamesRef} type="text" /></div>
-        <div class="input" ><input  ref={kidsBirthdaysRef} type="text" /></div>
-        <div class="input" ><input  ref={passwordRef} type="text" /></div>
-      </div>
+        <div class="input" >Address:<input ref={addressRef} type="text" /></div>
+        <div class="input" >First Name: <input  ref={firstNameRef} type="text" /></div>
+        <div class="input" >Last Name:<input  ref={lastNameRef} type="text" /></div>
+        <div class="input" >Middle Name:<input  ref={middleNameRef} type="text" /></div>
+        <div class="input" >Birthday:<input  ref={birthdayRef} type="text" /></div>
+        <div class="input" >Favorite Number:<input  ref={favoriteNumberRef} type="text" /></div>
+        <div class="input" >Significant Dates:<input  ref={significantDatesRef} type="text" /></div>
+        <div class="input" >Favorite Holiday:<input  ref={holidayRef} type="text" /></div>
+        <div class="input" >Favorite Sports Team<input  ref={sportsTeamsRef} type="text" /></div>
+        <div class="input" >Hometown:<input  ref={hometownRef} type="text" /></div>
+        <div class="input" >Pet Names: <input  ref={petNameRef} type="text" /></div>
+        <div class="input" >Spouse's First Name:<input  ref={spouseFirstNameRef} type="text" /></div>
+        <div class="input" >Spouse's Last Name:<input  ref={spouseLastNameRef} type="text" /></div>
+        <div class="input" >Parent's First Name:<input  ref={parentFirstNamesRef} type="text" /></div>
+        <div class="input" >Parent's Last Name:<input  ref={parentLastNamesRef} type="text" /></div>
+        <div class="input" >Child's First Name:<input  ref={kidsFirstNamesRef} type="text" /></div>
+        <div class="input" >Child's Last Name:<input  ref={kidsLastNamesRef} type="text" /></div>
+        <div class="input" >Child's Birthday:<input  ref={kidsBirthdaysRef} type="text" /></div>
+       </div>
+        <div class="inputPass" >Enter Password<input  ref={passwordRef} type="text" /></div>
+      
 
       <button class="submitButton" onClick={onSubmit}>
         Submit
       </button>
+      
+
+     
 
       {/* 👇️ show elements on click */}
       {isShown && (

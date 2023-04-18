@@ -13,6 +13,7 @@
   }
 }
 
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -42,36 +43,48 @@ html {
   background-color:#E9E9E9;
 }
 
+html,body {
+  margin:0;
+  padding:0;
+  overflow-x: initial !important; 
+  /*above code removes scroll bar at bottom of website, AND extra vertical scroll bar*/
+}
+
 /*removes extra whitespace at top of page*/
 *{
-  margin: 0;
+  margin: 0px;
+  padding: 0px;
 }
 
 .App{
   /*position: absolute; left: 37vw; top: 80px;*/
-  margin-left: 100px;
-  position: relative; top: 250px;
+  text-align: center;
+  margin-left: 90px;
+  position: relative; top: 70px;
 
 }
 
 .submitButton{
-  color:black;
-  margin: 5px;
+  
+  margin: 5px;}
+  /*content: "Submit";
 }
 
+.submitButton.clicked{
+  content: "Enter New Password";
+}
+
+.submitButton:active{
+  background-color:red;
+}*/
+
 img{
-  position: absolute;
-  top: 100px;
-  left: 220px;
   filter: drop-shadow(2px 2px #80723c);
 }
 
 .title{
   font-size:120px;
-  position: absolute;
-  left: 310px;
   text-align: center;
-  top: -150px;
   color:#af943b;
   text-shadow: 2px 2px 2px #80723c;
   font-family: "Verdana", sans-serif;
@@ -116,9 +129,65 @@ input[type="text"] {
   padding: 10px;
   width: 100%;
   transition: border-color 0.3s ease-in-out;
+  height: 35px;
+  width: 300px;
 }
 
 input[type="text"]:focus {
   border-color: #4e73df;
   outline: none;
+}
+
+/*all the input fields other than password one*/
+.input-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 10px;
+}
+
+/*the input field for password*/
+.inputPass[type="text"]{
+  text-align: center;
+  
+}
+
+
+
+
+/* the next four are all for centering the title and logo */
+.contain {
+  display: flex;
+  align-items: center;
+ justify-content: center;
+}
+
+.contain img {
+  margin-right: 20px; /* Add some spacing between the image and title */
+}
+
+@media screen and (max-width: 768px) {
+  /* Change the flex direction to stack the elements vertically */
+  .contain {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  /* Reset the margin on the image to remove the spacing */
+  .contain img {
+    margin-right: 0;
+    margin-bottom: 10px; /* Add some spacing between the image and title */
+  }
+}
+
+/*lets instruction paragraph and title/logo be centered together*/
+.containMore {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/*little instruction paragraph*/
+.inst{
+  width: 630px;
 }
