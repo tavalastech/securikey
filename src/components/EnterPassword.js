@@ -113,7 +113,7 @@ export default function EnterPassword() {
   const [sportsTeams, setSportsTeams] = useState("");
   const [spouseFirstName, setSpouseFirstName] = useState("");
   const [spouseLastName, setSpouseLastName] = useState("");
-
+  const [score, setScore] = useState(""); 
   /*  On Submit Function 
   
       On press of the submit button, the function grabs the password input and executes 
@@ -144,7 +144,6 @@ export default function EnterPassword() {
     const sportsTeams = sportsTeamsRef.current.value;
     const spouseFirstName = spouseFirstNameRef.current.value;
     const spouseLastName = spouseLastNameRef.current.value;
-
     
 
     if (password === "") return;
@@ -176,7 +175,10 @@ export default function EnterPassword() {
     setSportsTeams(containsSportsTeams(password, sportsTeams) + "");
     setSpouseFirstName(containsSpouseFirstName(password, spouseFirstName) + "");
     setSpouseLastName(containsSpouseLastName(password, spouseLastName) + "");
+
+    setScore(strengthScore() + "");
     setIsShown((current) => !current);
+    
 }
 
   // Returns HTML component
@@ -246,6 +248,7 @@ export default function EnterPassword() {
           </section>
           <h2>Does This Password Pass The Test? {overall.toUpperCase()}</h2>
           <h2>Does This Password Pass The Test: {overall}</h2>
+          <h2>Strength Score: {score}</h2>
         </div>
       )}
     </>

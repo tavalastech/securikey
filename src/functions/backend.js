@@ -254,7 +254,16 @@
        }
    }
    
-   export function strengthScore(count, totalCount){
-     totalStrengthScore = count/totalCount;
-     return totalStrengthScore;
-   }
+  //  export function strengthScore(count, totalCount){
+  //    totalStrengthScore = count/totalCount;
+  //    return totalStrengthScore;
+  //  }
+
+  let test = 6; 
+  let test2 = 3; 
+  export function strengthScore(){
+    //totalStrengthScore = count/totalCount;
+    //return count/totalCount; 
+    //return totalStrengthScore;
+    return totalCount
+  }
