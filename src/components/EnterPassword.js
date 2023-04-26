@@ -123,6 +123,9 @@ export default function EnterPassword() {
 
   */
 
+
+
+
   // Functions To Password and Assigns To State Variable
   function onSubmit(e) {
     const password = passwordRef.current.value;
@@ -180,41 +183,82 @@ export default function EnterPassword() {
 }
 
   // Returns HTML component
-
+  //Payton would like to change the order of the fields so they flow better on screen 
+  //proposed order: first name, middle name, last name, birth day, birth month, birth year
+  //address, fav number, fav sports team, hometown, pet name, spouse name
+  //parent first name, parent last name, child first name
+  //child birth day, child birth month, child birth year
   return (
     <>
+   
       <div class="input-container">
-        <div class="input" >Address:<input ref={addressRef} type="text" /></div>
-        <div class="input" >First Name: <input  ref={firstNameRef} type="text" /></div>
-        <div class="input" >Last Name:<input  ref={lastNameRef} type="text" /></div>
-        <div class="input" >Middle Name:<input  ref={middleNameRef} type="text" /></div>
-        <div class="input" >Birthday:<input  ref={birthdayRef} type="text" /></div>
-        <div class="input" >Favorite Number:<input  ref={favoriteNumberRef} type="text" /></div>
-        <div class="input" >Significant Dates:<input  ref={significantDatesRef} type="text" /></div>
-        <div class="input" >Favorite Holiday:<input  ref={holidayRef} type="text" /></div>
-        <div class="input" >Favorite Sports Team<input  ref={sportsTeamsRef} type="text" /></div>
-        <div class="input" >Hometown:<input  ref={hometownRef} type="text" /></div>
-        <div class="input" >Pet Names: <input  ref={petNameRef} type="text" /></div>
-        <div class="input" >Spouse's First Name:<input  ref={spouseFirstNameRef} type="text" /></div>
-        <div class="input" >Spouse's Last Name:<input  ref={spouseLastNameRef} type="text" /></div>
-        <div class="input" >Parent's First Name:<input  ref={parentFirstNamesRef} type="text" /></div>
-        <div class="input" >Parent's Last Name:<input  ref={parentLastNamesRef} type="text" /></div>
-        <div class="input" >Child's First Name:<input  ref={kidsFirstNamesRef} type="text" /></div>
-        <div class="input" >Child's Last Name:<input  ref={kidsLastNamesRef} type="text" /></div>
-        <div class="input" >Child's Birthday:<input  ref={kidsBirthdaysRef} type="text" /></div>
+        <label for="address">House/Apartment Number:</label>
+        <div class="input" id="address" ><input ref={addressRef} type="text" /></div>
+
+        <label for="fname">First Name:</label>
+        <div class="input" id="fname"> <input  ref={firstNameRef} type="text" /></div>
+
+        <label for="lname">Last Name:</label>
+        <div class="input" id="lname"><input  ref={lastNameRef} type="text" /></div>
+
+        <label for="mname">Middle Name:</label>
+        <div class="input" id="mname"><input  ref={middleNameRef} type="text" /></div>
+        
+        <label for="bday">Birth Day(DD):</label>
+        <div class="input" id="bday"><input  ref={birthdayRef} type="text" /></div>
+        
+        <label for="num">Favorite Number:</label>
+        <div class="input" id="num"><input  ref={favoriteNumberRef} type="text" /></div>
+        
+        <label for="bmonth">Birth Month(MM):</label>
+        <div class="input" id="bmonth"><input  ref={significantDatesRef} type="text" /></div>
+        
+        <label for="byear">Birth Year(YYYY):</label>
+        <div class="input" id="byear"><input  ref={holidayRef} type="text" /></div>
+        
+        <label for="sports">Favorite Sports Team:</label>
+        <div class="input" id="sports"><input  ref={sportsTeamsRef} type="text" /></div>
+
+        <label for="hometown">Hometown:</label>
+        <div class="input" id="hometown"><input  ref={hometownRef} type="text" /></div>
+
+        <label for="petName">Pet Name:</label>
+        <div class="input" id="petName"><input  ref={petNameRef} type="text" /></div>
+
+        <label for="spouseFName">Spouse First Name:</label>
+        <div class="input" id="spouseFName"><input  ref={spouseFirstNameRef} type="text" /></div>
+
+        <label for="childBMonth">Child Birth Month(MM):</label>
+        <div class="input" id="childBMonth"><input  ref={spouseLastNameRef} type="text" /></div>
+
+        <label for="parentFName">Parent First Name:</label>
+        <div class="input" id="parentFName"><input  ref={parentFirstNamesRef} type="text" /></div>
+
+        <label for="parentLName">Parent Last Name:</label>
+        <div class="input" id="parentLName"><input  ref={parentLastNamesRef} type="text" /></div>
+
+        <label for="childName">Child First Name:</label>
+        <div class="input" id="childName"><input  ref={kidsFirstNamesRef} type="text" /></div>
+
+        <label for="childBYear">Child Birth Year(YYYY):</label>
+        <div class="input" id="childBYear"><input  ref={kidsLastNamesRef} type="text" /></div>
+
+        <label for="childBDay">Child's Birth Day(DD):</label>
+        <div class="input" id="childBDay"><input  ref={kidsBirthdaysRef} type="text" /></div>
        </div>
         <div class="inputPass" >Enter Password<input  ref={passwordRef} type="text" /></div>
       
 
-      <button class="submitButton" onClick={onSubmit}>
+      <button class="submitButton" id="submitButton" onClick={onSubmit}>
         Submit
       </button>
+
+
       
-
-     
-
+  
       {/* 👇️ show elements on click */}
-      {isShown && (
+      {
+      isShown && (
         <div>
           <h1>Password Strength Test Results</h1>
           <section>
@@ -244,6 +288,7 @@ export default function EnterPassword() {
             <div>Does it contain my kids' last names: {kidsLastNames}</div>
             <div>Does it contain my kids' birthdays: {kidsBirthdays}</div>
           </section>
+
           <h2>Does This Password Pass The Test? {overall.toUpperCase()}</h2>
           <h2>Does This Password Pass The Test: {overall}</h2>
         </div>

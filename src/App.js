@@ -29,11 +29,13 @@ function App({ signOut }) {
           </div>
 
           {/** Instructions */}
-          <p class="inst">SecuriKey is a web application that allows you to test your password against not only general strength requirements, but also publicly known information you might post online.
-           Information such as your pet's name, your favorite holiday, or your birthday.</p>
+          <p class="inst">SecuriKey allows you to test a password against general strength requirements as well as personal information you might post online.
+            Insert one value per field with no additional spaces and click the Submit button. If value does not apply, leave the field blank. 
+           </p>
         </div>
 
         <EnterPassword></EnterPassword>
+
         <Button class = "signOutButton" onClick={signOut}>Sign Out</Button>
       </View>
       
