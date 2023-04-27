@@ -39,220 +39,239 @@
    }
    
    export function containsFirstName(passwordToCheck, pkiValueEntered) {
-     if (passwordToCheck.includes(pkiValueEntered)) {
-         totalCount++;
-         return true;
-     }
-     else {
-         count++;
-         totalCount++;
-         return false;
-         }
-   }
+    if (pkiValueEntered === "") {
+      return false;
+    } else if (passwordToCheck.includes(pkiValueEntered)) {
+      totalCount++;
+      return true;
+    } else {
+      count++;
+      totalCount++;
+      return false;
+    }
+  }
+  
    
    export function containsMiddleName(passwordToCheck, pkiValueEntered) {
-     if (passwordToCheck.includes(pkiValueEntered)) {
-         totalCount++;
-         return true;
-     }
-     else {
-         count++;
-         totalCount++;
-         return false;
-         }
-   }
+    if (pkiValueEntered === "") {
+      return false;
+    } else if (passwordToCheck.includes(pkiValueEntered)) {
+      totalCount++;
+      return true;
+    } else {
+      count++;
+      totalCount++;
+      return false;
+    }
+  }
    
    export function containsLastName(passwordToCheck, pkiValueEntered) {
-     if (passwordToCheck.includes(pkiValueEntered)) {
-         totalCount++;
-         return true;
-     }
-     else {
-         count++;
-         totalCount++;
-         return false;
-         }
-   }
+    if (pkiValueEntered === "") {
+      return false;
+    } else if (passwordToCheck.includes(pkiValueEntered)) {
+      totalCount++;
+      return true;
+    } else {
+      count++;
+      totalCount++;
+      return false;
+    }
+  }
    
    export function containsPetName(passwordToCheck, pkiValueEntered) {
-     if (passwordToCheck.includes(pkiValueEntered)) {
-         totalCount++;
-         return true;
-     }
-     else {
-         count++;
-         totalCount++;
-         return false;
-         }
-   }
+    if (pkiValueEntered === "") {
+      return false;
+    } else if (passwordToCheck.includes(pkiValueEntered)) {
+      totalCount++;
+      return true;
+    } else {
+      count++;
+      totalCount++;
+      return false;
+    }
+  }
    
    export function containsParentFirstNames(passwordToCheck, pkiValueEntered) {
-     if (passwordToCheck.includes(pkiValueEntered)) {
-         totalCount++;
-         return true;
-     }
-     else {
-         count++;
-         totalCount++;
-         return false;
-         }
-   }
+    if (pkiValueEntered === "") {
+      return false;
+    } else if (passwordToCheck.includes(pkiValueEntered)) {
+      totalCount++;
+      return true;
+    } else {
+      count++;
+      totalCount++;
+      return false;
+    }
+  }
    
    export function containsParentLastNames(passwordToCheck, pkiValueEntered) {
-     if (passwordToCheck.includes(pkiValueEntered)) {
-         totalCount++;
-         return true;
-     }
-     else {
-         count++;
-         totalCount++;
-         return false;
-         }
-   }
+    if (pkiValueEntered === "") {
+      return false;
+    } else if (passwordToCheck.includes(pkiValueEntered)) {
+      totalCount++;
+      return true;
+    } else {
+      count++;
+      totalCount++;
+      return false;
+    }
+  }
    
    export function containsSpouseFirstName(passwordToCheck, pkiValueEntered) {
-     if (passwordToCheck.includes(pkiValueEntered)) {
-         totalCount++;
-         return true;
-     }
-     else {
-         count++;
-         totalCount++;
-         return false;
-         }
-   }
+    if (pkiValueEntered === "") {
+      return false;
+    } else if (passwordToCheck.includes(pkiValueEntered)) {
+      totalCount++;
+      return true;
+    } else {
+      count++;
+      totalCount++;
+      return false;
+    }
+  }
    
    export function containsSpouseLastName(passwordToCheck, pkiValueEntered) {
-     if (passwordToCheck.includes(pkiValueEntered)) {
-         totalCount++;
-         return true;
-     }
-     else {
-         count++;
-         totalCount++;
-         return false;
-         }
-   }
+    if (pkiValueEntered === "") {
+      return false;
+    } else if (passwordToCheck.includes(pkiValueEntered)) {
+      totalCount++;
+      return true;
+    } else {
+      count++;
+      totalCount++;
+      return false;
+    }
+  }
    
    export function containsKidsFirstNames(passwordToCheck, pkiValueEntered) {
-     if (passwordToCheck.includes(pkiValueEntered)) {
-         totalCount++;
-         return true;
-     }
-     else {
-         count++;
-         totalCount++;
-         return false;
-         }
-   }
+    if (pkiValueEntered === "") {
+      return false;
+    } else if (passwordToCheck.includes(pkiValueEntered)) {
+      totalCount++;
+      return true;
+    } else {
+      count++;
+      totalCount++;
+      return false;
+    }
+  }
    
    export function containsKidsLastNames(passwordToCheck, pkiValueEntered) {
-     if (passwordToCheck.includes(pkiValueEntered)) {
-         totalCount++;
-         return true;
-     }
-     else {
-         count++;
-         totalCount++;
-         return false;
-         }
-   }
+    if (pkiValueEntered === "") {
+      return false;
+    } else if (passwordToCheck.includes(pkiValueEntered)) {
+      totalCount++;
+      return true;
+    } else {
+      count++;
+      totalCount++;
+      return false;
+    }
+  }
    
    export function containsBirthday(passwordToCheck, pkiValueEntered) {
-     if (passwordToCheck.includes(pkiValueEntered)) {
-         totalCount++;
-         return true;
-     }
-     else {
-         count++;
-         totalCount++;
-         return false;
-         }
-   }
+    if (pkiValueEntered === "") {
+      return false;
+    } else if (passwordToCheck.includes(pkiValueEntered)) {
+      totalCount++;
+      return true;
+    } else {
+      count++;
+      totalCount++;
+      return false;
+    }
+  }
    
    export function containsKidsBirthdays(passwordToCheck, pkiValueEntered) {
-     if (passwordToCheck.includes(pkiValueEntered)) {
-         totalCount++;
-         return true;
-     }
-     else {
-         count++;
-         totalCount++;
-         return false;
-         }
-   }
+    if (pkiValueEntered === "") {
+      return false;
+    } else if (passwordToCheck.includes(pkiValueEntered)) {
+      totalCount++;
+      return true;
+    } else {
+      count++;
+      totalCount++;
+      return false;
+    }
+  }
    
    export function containsHometown(passwordToCheck, pkiValueEntered) {
-     if (passwordToCheck.includes(pkiValueEntered)) {
-         totalCount++;
-         return true;
-     }
-     else {
-         count++;
-         totalCount++;
-         return false;
-         }
-   }
+    if (pkiValueEntered === "") {
+      return false;
+    } else if (passwordToCheck.includes(pkiValueEntered)) {
+      totalCount++;
+      return true;
+    } else {
+      count++;
+      totalCount++;
+      return false;
+    }
+  }
    
    export function containsSportsTeams(passwordToCheck, pkiValueEntered) {
-     if (passwordToCheck.includes(pkiValueEntered)) {
-         totalCount++;
-         return true;
-     }
-     else {
-         count++;
-         totalCount++;
-         return false;
-         }
-   }
+    if (pkiValueEntered === "") {
+      return false;
+    } else if (passwordToCheck.includes(pkiValueEntered)) {
+      totalCount++;
+      return true;
+    } else {
+      count++;
+      totalCount++;
+      return false;
+    }
+  }
    
    export function containsHoliday(passwordToCheck, pkiValueEntered) {
-     if (passwordToCheck.includes(pkiValueEntered)) {
-         totalCount++;
-         return true;
-     }
-     else {
-         count++;
-         totalCount++;
-         return false;
-         }
-   }
+    if (pkiValueEntered === "") {
+      return false;
+    } else if (passwordToCheck.includes(pkiValueEntered)) {
+      totalCount++;
+      return true;
+    } else {
+      count++;
+      totalCount++;
+      return false;
+    }
+  }
    
    export function containsSignificantDates(passwordToCheck, pkiValueEntered) {
-     if (passwordToCheck.includes(pkiValueEntered)) {
-         totalCount++;
-         return true;
-     }
-     else {
-         count++;
-         totalCount++;
-         return false;
-         }
-   }
+    if (pkiValueEntered === "") {
+      return false;
+    } else if (passwordToCheck.includes(pkiValueEntered)) {
+      totalCount++;
+      return true;
+    } else {
+      count++;
+      totalCount++;
+      return false;
+    }
+  }
    
    export function containsFavoriteNumber(passwordToCheck, pkiValueEntered) {
-     if (passwordToCheck.includes(pkiValueEntered)) {
-         totalCount++;
-         return true;
-     }
-     else {
-         count++;
-         totalCount++;
-         return false;
-         }
-   }
+    if (pkiValueEntered === "") {
+      return false;
+    } else if (passwordToCheck.includes(pkiValueEntered)) {
+      totalCount++;
+      return true;
+    } else {
+      count++;
+      totalCount++;
+      return false;
+    }
+  }
    
    export function containsAddress(passwordToCheck, pkiValueEntered) {
-     if (passwordToCheck.includes(pkiValueEntered)) {
-         totalCount++;
-         return true;
-     }
-     else {
-       count++;
-       totalCount++;
-       return false;
-       }
-   }
+    if (pkiValueEntered === "") {
+      return false;
+    } else if (passwordToCheck.includes(pkiValueEntered)) {
+      totalCount++;
+      return true;
+    } else {
+      count++;
+      totalCount++;
+      return false;
+    }
+  }
    
    export function strengthScore(count, totalCount){
      totalStrengthScore = count/totalCount;

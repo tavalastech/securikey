@@ -179,38 +179,110 @@ export default function EnterPassword() {
     setIsShown((current) => !current);
 }
 
+let scoreLevel = "";
+let pkiCount = 0;
+let strengthCount = 0;
+
+if (address === "true" ) {
+  pkiCount++;
+}
+if (firstName === "true" ) {
+  pkiCount++;
+}
+if (lastName === "true" ) {
+  pkiCount++;
+}
+if (middleName === "true" ) {
+  pkiCount++;
+}
+if (birthday === "true" ) {
+  pkiCount++;
+}
+if (favoriteNumber === "true" ) {
+  pkiCount++;
+}
+if (significantDates === "true" ) {
+  pkiCount++;
+}
+if (holiday === "true" ) {
+  pkiCount++;
+}
+if (sportsTeams === "true" ) {
+  pkiCount++;
+}
+if (hometown === "true" ) {
+  pkiCount++;
+}
+if (petName === "true" ) {
+  pkiCount++;
+}
+if (spouseFirstName === "true" ) {
+  pkiCount++;
+}
+if (spouseLastName === "true" ) {
+  pkiCount++;
+}
+if (parentFirstNames === "true" ) {
+  pkiCount++;
+}
+if (parentLastNames === "true" ) {
+  pkiCount++;
+}
+if (kidsFirstNames === "true" ) {
+  pkiCount++;
+}
+if (kidsLastNames === "true" ) {
+  pkiCount++;
+}
+if (kidsBirthdays === "true" ) {
+  pkiCount++;
+}
+
+
+if (overall === "true") {
+  strengthCount = 0;
+} else {
+  strengthCount = 1;
+}
+
+
+if (strengthCount < 1 && pkiCount < 1) {
+  scoreLevel = 'low';
+} else if (strengthCount >= 1 && pkiCount >= 1) {
+  scoreLevel = 'high';
+} else 
+  scoreLevel = 'moderate';
+
   // Returns HTML component
 
   return (
     <>
       <div class="input-container">
-        <div class="input" >Address:<input ref={addressRef} type="text" /></div>
-        <div class="input" >First Name: <input  ref={firstNameRef} type="text" /></div>
-        <div class="input" >Last Name:<input  ref={lastNameRef} type="text" /></div>
-        <div class="input" >Middle Name:<input  ref={middleNameRef} type="text" /></div>
-        <div class="input" >Birthday:<input  ref={birthdayRef} type="text" /></div>
-        <div class="input" >Favorite Number:<input  ref={favoriteNumberRef} type="text" /></div>
-        <div class="input" >Significant Dates:<input  ref={significantDatesRef} type="text" /></div>
-        <div class="input" >Favorite Holiday:<input  ref={holidayRef} type="text" /></div>
-        <div class="input" >Favorite Sports Team<input  ref={sportsTeamsRef} type="text" /></div>
-        <div class="input" >Hometown:<input  ref={hometownRef} type="text" /></div>
-        <div class="input" >Pet Names: <input  ref={petNameRef} type="text" /></div>
-        <div class="input" >Spouse's First Name:<input  ref={spouseFirstNameRef} type="text" /></div>
-        <div class="input" >Spouse's Last Name:<input  ref={spouseLastNameRef} type="text" /></div>
-        <div class="input" >Parent's First Name:<input  ref={parentFirstNamesRef} type="text" /></div>
-        <div class="input" >Parent's Last Name:<input  ref={parentLastNamesRef} type="text" /></div>
-        <div class="input" >Child's First Name:<input  ref={kidsFirstNamesRef} type="text" /></div>
-        <div class="input" >Child's Last Name:<input  ref={kidsLastNamesRef} type="text" /></div>
-        <div class="input" >Child's Birthday:<input  ref={kidsBirthdaysRef} type="text" /></div>
+        <div class="input" >Address:<input ref={addressRef} type="text" placeholder="enter text here" /></div>
+        <div class="input" >First Name: <input  ref={firstNameRef} type="text" placeholder="enter text here" /></div>
+        <div class="input" >Last Name:<input  ref={lastNameRef} type="text" placeholder="enter text here" /></div>
+        <div class="input" >Middle Name:<input  ref={middleNameRef} type="text" placeholder="enter text here" /></div>
+        <div class="input" >Birthday:<input  ref={birthdayRef} type="text" placeholder="enter text here" /></div>
+        <div class="input" >Favorite Number:<input  ref={favoriteNumberRef} type="text" placeholder="enter text here" /></div>
+        <div class="input" >Significant Dates:<input  ref={significantDatesRef} type="text" placeholder="enter text here" /></div>
+        <div class="input" >Favorite Holiday:<input  ref={holidayRef} type="text" placeholder="enter text here" /></div>
+        <div class="input" >Favorite Sports Team<input  ref={sportsTeamsRef} type="text" placeholder="enter text here" /></div>
+        <div class="input" >Hometown:<input  ref={hometownRef} type="text" placeholder="enter text here" /></div>
+        <div class="input" >Pet Names: <input  ref={petNameRef} type="text" placeholder="enter text here" /></div>
+        <div class="input" >Spouse's First Name:<input  ref={spouseFirstNameRef} type="text" placeholder="enter text here" /></div>
+        <div class="input" >Spouse's Last Name:<input  ref={spouseLastNameRef} type="text" placeholder="enter text here" /></div>
+        <div class="input" >Parent's First Name:<input  ref={parentFirstNamesRef} type="text" placeholder="enter text here" /></div>
+        <div class="input" >Parent's Last Name:<input  ref={parentLastNamesRef} type="text" placeholder="enter text here" /></div>
+        <div class="input" >Child's First Name:<input  ref={kidsFirstNamesRef} type="text" placeholder="enter text here" /></div>
+        <div class="input" >Child's Last Name:<input  ref={kidsLastNamesRef} type="text" placeholder="enter text here" /></div>
+        <div class="input" >Child's Birthday:<input  ref={kidsBirthdaysRef} type="text" placeholder="enter text here" /></div>
        </div>
-        <div class="inputPass" >Enter Password<input  ref={passwordRef} type="text" /></div>
+        <div class="inputPass" >Enter Password<input  ref={passwordRef} type="text" placeholder="enter password here" /></div>
       
 
       <button class="submitButton" onClick={onSubmit}>
         Submit
       </button>
-      
-
      
 
       {/* 👇️ show elements on click */}
@@ -223,6 +295,7 @@ export default function EnterPassword() {
             <div>Does it contain a uppercase letter: {uppercase}</div>
             <div>Does it contain a special character: {special}</div>
             <div>Is it atleast 8 characters long: {length}</div>
+           
             <div>Does it contain my address: {address}</div>
             <div>Does it contain my first name: {firstName}</div>
             <div>Does it contain my last name: {lastName}</div>
@@ -244,10 +317,22 @@ export default function EnterPassword() {
             <div>Does it contain my kids' last names: {kidsLastNames}</div>
             <div>Does it contain my kids' birthdays: {kidsBirthdays}</div>
           </section>
-          <h2>Does This Password Pass The Test? {overall.toUpperCase()}</h2>
-          <h2>Does This Password Pass The Test: {overall}</h2>
+          <h2>Does This Password Pass The Strength Test? {overall.toUpperCase() === 'TRUE' ? 'Yes' : 'No'}</h2>
+          <h2>What is your score level? {scoreLevel}</h2>
+          <h2>{strengthCount}</h2>
+          <h2>{pkiCount}</h2>
+          <h2>{scoreLevel}</h2>
+          
+          {/* <h2>Does This Password Pass The Test: {overall}</h2> */}
         </div>
+        
+        
       )}
+
+      
     </>
   );
+
 }
+
+
