@@ -180,8 +180,10 @@ export default function EnterPassword() {
 }
 
 let scoreLevel = "";
+let userMessage = "";
 let pkiCount = 0;
 let strengthCount = 0;
+
 
 if (address === "true" ) {
   pkiCount++;
@@ -247,12 +249,41 @@ if (overall === "true") {
 
 
 if (strengthCount < 1 && pkiCount < 1) {
-  scoreLevel = 'low';
+  scoreLevel = 'LOW';
+  userMessage = 'Thank you for using our password strength checker. We are happy to inform you that the password you ' + 
+                'entered has been deemed strong enough to have a LOW chance to be cracked by most common hacking attempts. ' + 
+                'Based on our analysis, your password meets general strength requirements, such as including a mix of ' +
+                'uppercase and lowercase letters, numbers, and special characters. Furthermore, we also checked that ' + 
+                'your password does not contain any publicly known information, which greatly reduces the chances of ' + 
+                'it being cracked by attackers. This means that your account is well-protected against potential security ' + 
+                'threats. We recommend that you continue to use strong and unique passwords for all your accounts and ' + 
+                'them periodically for added security. Thank you again for using our service, and we hope to assist you ' + 
+                'in the future.';
 } else if (strengthCount >= 1 && pkiCount >= 1) {
-  scoreLevel = 'high';
-} else 
-  scoreLevel = 'moderate';
-
+  scoreLevel = 'HIGH';
+  userMessage = 'Thank you for using our password strength checker. Unfortunately, we must inform you that the password you ' +
+                'entered did not meet our general strength requirements and contains publicly known information. This ' +
+                'means that your password is weak and could be easily cracked by attackers, leaving your account vulnerable ' +
+                'to security threats. We highly recommend that you choose a different password that is strong and unique for ' +
+                'this account, and any other accounts that may share the same or similar password. When creating a new password, ' +
+                'please ensure that it contains a mix of uppercase and lowercase letters, numbers, and special characters. Avoid ' +
+                'using personal information, such as your name, birthdate, or other identifiable information, as well as common ' +
+                'phrases or words that are easy to guess. We take your account security seriously and want to help you protect it '+
+                'from potential threats. Thank you for using our service, and we hope to assist you in the future.'
+} else if (strengthCount >=1 || pkiCount >=1) {
+  scoreLevel = 'MODERATE';
+  userMessage = 'Thank you for using our password strength checker. Unfortunately, we must inform you that the password you ' +
+                'entered did not meet our general strength requirements or contains publicly known information. This ' +
+                'can be determined by checking if your general strength check passed or not, if it did as defined by a "Yes" ' +
+                'above then the problem lies within your publicly known information, remove it from your password. This problem '+
+                'means that your password is somewhat weak and could be cracked by attackers, leaving your account vulnerable ' +
+                'to security threats. We highly recommend that you choose a different password that is strong and unique for ' +
+                'this account, and any other accounts that may share the same or similar password. When creating a new password, ' +
+                'please ensure that it contains a mix of uppercase and lowercase letters, numbers, and special characters. Avoid ' +
+                'using personal information, such as your name, birthdate, or other identifiable information, as well as common ' +
+                'phrases or words that are easy to guess. We take your account security seriously and want to help you protect it '+
+                'from potential threats. Thank you for using our service, and we hope to assist you in the future.'
+}
   // Returns HTML component
 
   return (
@@ -290,7 +321,7 @@ if (strengthCount < 1 && pkiCount < 1) {
         <div>
           <h1>Password Strength Test Results</h1>
           <section>
-            <div>Does it contain a number: {number}</div>
+            {/* <div>Does it contain a number: {number}</div>
             <div>Does it contain a lowercase letter: {lowercase}</div>
             <div>Does it contain a uppercase letter: {uppercase}</div>
             <div>Does it contain a special character: {special}</div>
@@ -315,13 +346,18 @@ if (strengthCount < 1 && pkiCount < 1) {
             <div>Does it contain my parents' last names: {parentLastNames}</div>
             <div>Does it contain my kids' first names: {kidsFirstNames}</div>
             <div>Does it contain my kids' last names: {kidsLastNames}</div>
-            <div>Does it contain my kids' birthdays: {kidsBirthdays}</div>
+            <div>Does it contain my kids' birthdays: {kidsBirthdays}</div> */}
           </section>
           <h2>Does This Password Pass The Strength Test? {overall.toUpperCase() === 'TRUE' ? 'Yes' : 'No'}</h2>
-          <h2>What is your score level? {scoreLevel}</h2>
-          <h2>{strengthCount}</h2>
+          <h2>What is the probability of your password being cracked? {scoreLevel}</h2>
+          {/* <h2>{strengthCount}</h2>
           <h2>{pkiCount}</h2>
-          <h2>{scoreLevel}</h2>
+          <h2>{scoreLevel}</h2> */}
+  
+          <h3 id="message">Dear user,</h3><br></br>
+          <h3 class="report" id="message">{userMessage}</h3><br></br>
+          <h3 id="message">Best regards, <br></br>The SecuriKey team</h3>
+          
           
           {/* <h2>Does This Password Pass The Test: {overall}</h2> */}
         </div>
