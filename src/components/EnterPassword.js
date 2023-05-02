@@ -123,9 +123,6 @@ export default function EnterPassword() {
 
   */
 
-
-
-
   // Functions To Password and Assigns To State Variable
   function onSubmit(e) {
     const password = passwordRef.current.value;
@@ -182,91 +179,154 @@ export default function EnterPassword() {
     setIsShown((current) => !current);
 }
 
+let scoreLevel = "";
+let userMessage = "";
+let pkiCount = 0;
+let strengthCount = 0;
+
+
+if (address === "true" ) {
+  pkiCount++;
+}
+if (firstName === "true" ) {
+  pkiCount++;
+}
+if (lastName === "true" ) {
+  pkiCount++;
+}
+if (middleName === "true" ) {
+  pkiCount++;
+}
+if (birthday === "true" ) {
+  pkiCount++;
+}
+if (favoriteNumber === "true" ) {
+  pkiCount++;
+}
+if (significantDates === "true" ) {
+  pkiCount++;
+}
+if (holiday === "true" ) {
+  pkiCount++;
+}
+if (sportsTeams === "true" ) {
+  pkiCount++;
+}
+if (hometown === "true" ) {
+  pkiCount++;
+}
+if (petName === "true" ) {
+  pkiCount++;
+}
+if (spouseFirstName === "true" ) {
+  pkiCount++;
+}
+if (spouseLastName === "true" ) {
+  pkiCount++;
+}
+if (parentFirstNames === "true" ) {
+  pkiCount++;
+}
+if (parentLastNames === "true" ) {
+  pkiCount++;
+}
+if (kidsFirstNames === "true" ) {
+  pkiCount++;
+}
+if (kidsLastNames === "true" ) {
+  pkiCount++;
+}
+if (kidsBirthdays === "true" ) {
+  pkiCount++;
+}
+
+
+if (overall === "true") {
+  strengthCount = 0;
+} else {
+  strengthCount = 1;
+}
+
+
+if (strengthCount < 1 && pkiCount < 1) {
+  scoreLevel = 'LOW';
+  userMessage = 'Thank you for using our password strength checker. We are happy to inform you that the password you ' + 
+                'entered has been deemed strong enough to have a LOW chance to be cracked by most common hacking attempts. ' + 
+                'Based on our analysis, your password meets general strength requirements, such as including a mix of ' +
+                'uppercase and lowercase letters, numbers, and special characters. Furthermore, we also checked that ' + 
+                'your password does not contain any publicly known information, which greatly reduces the chances of ' + 
+                'it being cracked by attackers. This means that your account is well-protected against potential security ' + 
+                'threats. We recommend that you continue to use strong and unique passwords for all your accounts and ' + 
+                'them periodically for added security. Thank you again for using our service, and we hope to assist you ' + 
+                'in the future.';
+} else if (strengthCount >= 1 && pkiCount >= 1) {
+  scoreLevel = 'HIGH';
+  userMessage = 'Thank you for using our password strength checker. Unfortunately, we must inform you that the password you ' +
+                'entered did not meet our general strength requirements and contains publicly known information. This ' +
+                'means that your password is weak and could be easily cracked by attackers, leaving your account vulnerable ' +
+                'to security threats. We highly recommend that you choose a different password that is strong and unique for ' +
+                'this account, and any other accounts that may share the same or similar password. When creating a new password, ' +
+                'please ensure that it contains a mix of uppercase and lowercase letters, numbers, and special characters. Avoid ' +
+                'using personal information, such as your name, birthdate, or other identifiable information, as well as common ' +
+                'phrases or words that are easy to guess. We take your account security seriously and want to help you protect it '+
+                'from potential threats. Thank you for using our service, and we hope to assist you in the future.'
+} else if (strengthCount >=1 || pkiCount >=1) {
+  scoreLevel = 'MODERATE';
+  userMessage = 'Thank you for using our password strength checker. Unfortunately, we must inform you that the password you ' +
+                'entered did not meet our general strength requirements or contains publicly known information. This ' +
+                'can be determined by checking if your general strength check passed or not, if it did as defined by a "Yes" ' +
+                'above then the problem lies within your publicly known information, remove it from your password. This problem '+
+                'means that your password is somewhat weak and could be cracked by attackers, leaving your account vulnerable ' +
+                'to security threats. We highly recommend that you choose a different password that is strong and unique for ' +
+                'this account, and any other accounts that may share the same or similar password. When creating a new password, ' +
+                'please ensure that it contains a mix of uppercase and lowercase letters, numbers, and special characters. Avoid ' +
+                'using personal information, such as your name, birthdate, or other identifiable information, as well as common ' +
+                'phrases or words that are easy to guess. We take your account security seriously and want to help you protect it '+
+                'from potential threats. Thank you for using our service, and we hope to assist you in the future.'
+}
   // Returns HTML component
-  //Payton would like to change the order of the fields so they flow better on screen 
-  //proposed order: first name, middle name, last name, birth day, birth month, birth year
-  //address, fav number, fav sports team, hometown, pet name, spouse name
-  //parent first name, parent last name, child first name
-  //child birth day, child birth month, child birth year
+
   return (
     <>
-   
       <div class="input-container">
-        <label for="address">House/Apartment Number:</label>
-        <div class="input" id="address" ><input ref={addressRef} type="text" /></div>
-
-        <label for="fname">First Name:</label>
-        <div class="input" id="fname"> <input  ref={firstNameRef} type="text" /></div>
-
-        <label for="lname">Last Name:</label>
-        <div class="input" id="lname"><input  ref={lastNameRef} type="text" /></div>
-
-        <label for="mname">Middle Name:</label>
-        <div class="input" id="mname"><input  ref={middleNameRef} type="text" /></div>
-        
-        <label for="bday">Birth Day(DD):</label>
-        <div class="input" id="bday"><input  ref={birthdayRef} type="text" /></div>
-        
-        <label for="num">Favorite Number:</label>
-        <div class="input" id="num"><input  ref={favoriteNumberRef} type="text" /></div>
-        
-        <label for="bmonth">Birth Month(MM):</label>
-        <div class="input" id="bmonth"><input  ref={significantDatesRef} type="text" /></div>
-        
-        <label for="byear">Birth Year(YYYY):</label>
-        <div class="input" id="byear"><input  ref={holidayRef} type="text" /></div>
-        
-        <label for="sports">Favorite Sports Team:</label>
-        <div class="input" id="sports"><input  ref={sportsTeamsRef} type="text" /></div>
-
-        <label for="hometown">Hometown:</label>
-        <div class="input" id="hometown"><input  ref={hometownRef} type="text" /></div>
-
-        <label for="petName">Pet Name:</label>
-        <div class="input" id="petName"><input  ref={petNameRef} type="text" /></div>
-
-        <label for="spouseFName">Spouse First Name:</label>
-        <div class="input" id="spouseFName"><input  ref={spouseFirstNameRef} type="text" /></div>
-
-        <label for="childBMonth">Child Birth Month(MM):</label>
-        <div class="input" id="childBMonth"><input  ref={spouseLastNameRef} type="text" /></div>
-
-        <label for="parentFName">Parent First Name:</label>
-        <div class="input" id="parentFName"><input  ref={parentFirstNamesRef} type="text" /></div>
-
-        <label for="parentLName">Parent Last Name:</label>
-        <div class="input" id="parentLName"><input  ref={parentLastNamesRef} type="text" /></div>
-
-        <label for="childName">Child First Name:</label>
-        <div class="input" id="childName"><input  ref={kidsFirstNamesRef} type="text" /></div>
-
-        <label for="childBYear">Child Birth Year(YYYY):</label>
-        <div class="input" id="childBYear"><input  ref={kidsLastNamesRef} type="text" /></div>
-
-        <label for="childBDay">Child's Birth Day(DD):</label>
-        <div class="input" id="childBDay"><input  ref={kidsBirthdaysRef} type="text" /></div>
+        <div class="input" >Address:<input ref={addressRef} type="text" placeholder="enter text here" /></div>
+        <div class="input" >First Name: <input  ref={firstNameRef} type="text" placeholder="enter text here" /></div>
+        <div class="input" >Last Name:<input  ref={lastNameRef} type="text" placeholder="enter text here" /></div>
+        <div class="input" >Middle Name:<input  ref={middleNameRef} type="text" placeholder="enter text here" /></div>
+        <div class="input" >Birthday:<input  ref={birthdayRef} type="text" placeholder="enter text here" /></div>
+        <div class="input" >Favorite Number:<input  ref={favoriteNumberRef} type="text" placeholder="enter text here" /></div>
+        <div class="input" >Significant Dates:<input  ref={significantDatesRef} type="text" placeholder="enter text here" /></div>
+        <div class="input" >Favorite Holiday:<input  ref={holidayRef} type="text" placeholder="enter text here" /></div>
+        <div class="input" >Favorite Sports Team<input  ref={sportsTeamsRef} type="text" placeholder="enter text here" /></div>
+        <div class="input" >Hometown:<input  ref={hometownRef} type="text" placeholder="enter text here" /></div>
+        <div class="input" >Pet Names: <input  ref={petNameRef} type="text" placeholder="enter text here" /></div>
+        <div class="input" >Spouse's First Name:<input  ref={spouseFirstNameRef} type="text" placeholder="enter text here" /></div>
+        <div class="input" >Spouse's Last Name:<input  ref={spouseLastNameRef} type="text" placeholder="enter text here" /></div>
+        <div class="input" >Parent's First Name:<input  ref={parentFirstNamesRef} type="text" placeholder="enter text here" /></div>
+        <div class="input" >Parent's Last Name:<input  ref={parentLastNamesRef} type="text" placeholder="enter text here" /></div>
+        <div class="input" >Child's First Name:<input  ref={kidsFirstNamesRef} type="text" placeholder="enter text here" /></div>
+        <div class="input" >Child's Last Name:<input  ref={kidsLastNamesRef} type="text" placeholder="enter text here" /></div>
+        <div class="input" >Child's Birthday:<input  ref={kidsBirthdaysRef} type="text" placeholder="enter text here" /></div>
        </div>
-        <div class="inputPass" >Enter Password<input  ref={passwordRef} type="text" /></div>
+        <div class="inputPass" >Enter Password<input  ref={passwordRef} type="text" placeholder="enter password here" /></div>
       
 
-      <button class="submitButton" id="submitButton" onClick={onSubmit}>
+      <button class="submitButton" onClick={onSubmit}>
         Submit
       </button>
+     
 
-
-      
-  
       {/* 👇️ show elements on click */}
-      {
-      isShown && (
+      {isShown && (
         <div>
           <h1>Password Strength Test Results</h1>
           <section>
-            <div>Does it contain a number: {number}</div>
+            {/* <div>Does it contain a number: {number}</div>
             <div>Does it contain a lowercase letter: {lowercase}</div>
             <div>Does it contain a uppercase letter: {uppercase}</div>
             <div>Does it contain a special character: {special}</div>
             <div>Is it atleast 8 characters long: {length}</div>
+           
             <div>Does it contain my address: {address}</div>
             <div>Does it contain my first name: {firstName}</div>
             <div>Does it contain my last name: {lastName}</div>
@@ -286,13 +346,29 @@ export default function EnterPassword() {
             <div>Does it contain my parents' last names: {parentLastNames}</div>
             <div>Does it contain my kids' first names: {kidsFirstNames}</div>
             <div>Does it contain my kids' last names: {kidsLastNames}</div>
-            <div>Does it contain my kids' birthdays: {kidsBirthdays}</div>
+            <div>Does it contain my kids' birthdays: {kidsBirthdays}</div> */}
           </section>
-
-          <h2>Does This Password Pass The Test? {overall.toUpperCase()}</h2>
-          <h2>Does This Password Pass The Test: {overall}</h2>
+          <h2>Does This Password Pass The Strength Test? {overall.toUpperCase() === 'TRUE' ? 'Yes' : 'No'}</h2>
+          <h2>What is the probability of your password being cracked? {scoreLevel}</h2>
+          {/* <h2>{strengthCount}</h2>
+          <h2>{pkiCount}</h2>
+          <h2>{scoreLevel}</h2> */}
+  
+          <h3 id="message">Dear user,</h3><br></br>
+          <h3 class="report" id="message">{userMessage}</h3><br></br>
+          <h3 id="message">Best regards, <br></br>The SecuriKey team</h3>
+          
+          
+          {/* <h2>Does This Password Pass The Test: {overall}</h2> */}
         </div>
+        
+        
       )}
+
+      
     </>
   );
+
 }
+
+

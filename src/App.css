@@ -59,18 +59,14 @@ html,body {
 .App{
   /*position: absolute; left: 37vw; top: 80px;*/
   text-align: center;
-  margin-left: 5px;
-  position: relative; 
-  top: 30px;
+  margin-left: 90px;
+  position: relative; top: 70px;
 
 }
 
 .submitButton{
   
-  margin: 5px;
-}
-
-
+  margin: 5px;}
   /*content: "Submit";
 }
 
@@ -123,7 +119,7 @@ p{
 }
 
 input{
-  margin-left: 10px;
+  margin-left: 20px;
 }
 
 input[type="text"] {
@@ -145,27 +141,18 @@ input[type="text"]:focus {
 /*all the input fields other than password one*/
 .input-container {
   display: grid;
-	grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
-	grid-gap: 10px;
-  margin-left: -50px;
-  align-items: center;
-  padding: 15px;
-}
-
-label{
-	grid-column: 1, 3;
-	text-align: right;
+  gap: 10px;
 }
 
 /*the input field for password*/
 .inputPass[type="text"]{
   text-align: center;
-  padding: 10px;
-  grid-column: 2;
-	width: 100%;
-	box-sizing: border-box;
+  
 }
+
+
 
 
 /* the next four are all for centering the title and logo */
@@ -193,7 +180,7 @@ label{
   }
 }
 
-/*lets the instruction paragraph and title/logo be centered together*/
+/*lets instruction paragraph and title/logo be centered together*/
 .containMore {
   display: flex;
   flex-direction: column;
@@ -205,8 +192,6 @@ label{
   width: 630px;
 }
 
-/*text next to input fields, not including password text*/
-.input{
-  white-space: nowrap;
+#message {
+  text-align: left;
 }
-
