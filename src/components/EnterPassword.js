@@ -289,24 +289,62 @@ if (strengthCount < 1 && pkiCount < 1) {
   return (
     <>
       <div class="input-container">
-        <div class="input" >Address:<input ref={addressRef} type="text" placeholder="enter text here" /></div>
-        <div class="input" >First Name: <input  ref={firstNameRef} type="text" placeholder="enter text here" /></div>
-        <div class="input" >Last Name:<input  ref={lastNameRef} type="text" placeholder="enter text here" /></div>
-        <div class="input" >Middle Name:<input  ref={middleNameRef} type="text" placeholder="enter text here" /></div>
-        <div class="input" >Birthday:<input  ref={birthdayRef} type="text" placeholder="enter text here" /></div>
-        <div class="input" >Favorite Number:<input  ref={favoriteNumberRef} type="text" placeholder="enter text here" /></div>
-        <div class="input" >Significant Dates:<input  ref={significantDatesRef} type="text" placeholder="enter text here" /></div>
-        <div class="input" >Favorite Holiday:<input  ref={holidayRef} type="text" placeholder="enter text here" /></div>
-        <div class="input" >Favorite Sports Team<input  ref={sportsTeamsRef} type="text" placeholder="enter text here" /></div>
-        <div class="input" >Hometown:<input  ref={hometownRef} type="text" placeholder="enter text here" /></div>
-        <div class="input" >Pet Names: <input  ref={petNameRef} type="text" placeholder="enter text here" /></div>
-        <div class="input" >Spouse's First Name:<input  ref={spouseFirstNameRef} type="text" placeholder="enter text here" /></div>
-        <div class="input" >Spouse's Last Name:<input  ref={spouseLastNameRef} type="text" placeholder="enter text here" /></div>
-        <div class="input" >Parent's First Name:<input  ref={parentFirstNamesRef} type="text" placeholder="enter text here" /></div>
-        <div class="input" >Parent's Last Name:<input  ref={parentLastNamesRef} type="text" placeholder="enter text here" /></div>
-        <div class="input" >Child's First Name:<input  ref={kidsFirstNamesRef} type="text" placeholder="enter text here" /></div>
-        <div class="input" >Child's Last Name:<input  ref={kidsLastNamesRef} type="text" placeholder="enter text here" /></div>
-        <div class="input" >Child's Birthday:<input  ref={kidsBirthdaysRef} type="text" placeholder="enter text here" /></div>
+
+        <label for="fName">First Name:</label>
+        <div class="input" id="fName"><input ref={addressRef} type="text" placeholder="enter text here" /></div>
+
+        <label for="mName">Middle Name:</label>
+        <div class="input" id="mName"><input  ref={firstNameRef} type="text" placeholder="enter text here" /></div>
+
+        <label for="lName">Last Name:</label>
+        <div class="input" id="lName"><input  ref={lastNameRef} type="text" placeholder="enter text here" /></div>
+
+        <label for="bDay">Birth day(DD):</label>
+        <div class="input" id="bDay"><input  ref={middleNameRef} type="text" placeholder="enter text here" /></div>
+
+        <label for="bMonth">Birth month(MM):</label>
+        <div class="input" id="bMonth"><input  ref={birthdayRef} type="text" placeholder="enter text here" /></div>
+
+        <label for="bYear">Birth year(YYYY):</label>
+        <div class="input" id="bYear"><input  ref={favoriteNumberRef} type="text" placeholder="enter text here" /></div>
+
+        <label for="houseNum">House/Apartment Number:</label>
+        <div class="input" id="houseNum"><input  ref={significantDatesRef} type="text" placeholder="enter text here" /></div>
+
+        <label for="hometown">Hometown:</label>
+        <div class="input" id="hometown"><input  ref={holidayRef} type="text" placeholder="enter text here" /></div>
+
+        <label for="sports">Favorite Sports Team:</label>
+        <div class="input" id="sports"><input  ref={sportsTeamsRef} type="text" placeholder="enter text here" /></div>
+
+        <label for="favNum">Favorite Number:</label>
+        <div class="input" id="favNum"><input  ref={hometownRef} type="text" placeholder="enter text here" /></div>
+
+        <label for="petName">Pet Name:</label>
+        <div class="input" id="petName" ><input  ref={petNameRef} type="text" placeholder="enter text here" /></div>
+
+        <label for="spouseName">Spouse Name:</label>
+        <div class="input" id="spouseName"><input  ref={spouseFirstNameRef} type="text" placeholder="enter text here" /></div>
+
+        <label for="parentFName">Parent First Name:</label>
+        <div class="input" id="parentFName"><input  ref={spouseLastNameRef} type="text" placeholder="enter text here" /></div>
+
+        <label for="parentLName">Parent Last Name:</label>
+        <div class="input" id="parentLName"><input  ref={parentFirstNamesRef} type="text" placeholder="enter text here" /></div>
+
+        <label for="childFName">Child First Name:</label>
+        <div class="input" id="childFName"><input  ref={parentLastNamesRef} type="text" placeholder="enter text here" /></div>
+
+        <label for="childBDay">Child birth day(DD):</label>
+        <div class="input" id="childBDay"><input  ref={kidsFirstNamesRef} type="text" placeholder="enter text here" /></div>
+
+        <label for="childBMonth">Child birth month(MM):</label>
+        <div class="input" id="childBMonth"><input  ref={kidsLastNamesRef} type="text" placeholder="enter text here" /></div>
+
+        <label for="childBYear">Child birth year(YYYY):</label>
+        <div class="input" id="childBYear"><input  ref={kidsBirthdaysRef} type="text" placeholder="enter text here" /></div>
+
+
        </div>
         <div class="inputPass" >Enter Password<input  ref={passwordRef} type="text" placeholder="enter password here" /></div>
       
