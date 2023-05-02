@@ -23,7 +23,7 @@ function App({ signOut }) {
         <div class="containMore">
           <div class="contain">
             {/** Logo on screen **/}
-            <img src="android-chrome-192x192.png" alt="Logo"></img>
+            <img class="logo-img" src="android-chrome-192x192.png" alt="Logo"></img>
             {/** Header */}
             <h1 class="title">SecuriKey</h1>
           </div>
